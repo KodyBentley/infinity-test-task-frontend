@@ -96,7 +96,7 @@ class FormComponent extends React.Component<Props, State> {
 
         /**
          * Declaration of page numbers to be rendered
-         * Dynamically map array and return li tages to be rendered
+         * Dynamically map array and return li tags to be rendered
          */
         const renderPageNumbers = pageNumbers.map((display, index) => {
             return (
@@ -145,7 +145,7 @@ class FormComponent extends React.Component<Props, State> {
                                                 <td key={data.first_name}>{data.first_name}</td>
                                                 <td key={data.last_name}>{data.last_name}</td>
                                                 <td key={data.email}>{data.email}</td>
-                                                <td key={data.number}>${data.number.toFixed(2)}</td>
+                                                <td key={data.number}>{data.number.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</td>
                                                 <td key={data.date}><DatePicker value={new Date(data.date)} /></td>
                                             </tr>
                                         );
